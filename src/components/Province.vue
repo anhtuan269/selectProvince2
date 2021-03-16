@@ -1,0 +1,48 @@
+<template>
+  <div class="Province">
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      v-model="selected"
+      @click="select"
+    >
+      <option>Chose Province</option>
+      <option
+        v-for="(province, index) in provinceList"
+        :key="index"
+        :value="province.id"
+      >
+        {{ province.name }}
+      </option>
+    </select>
+    <span>{{ selectedProvince }}</span>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      selected: this.selectedProvince
+    };
+  },
+  name: "Province",
+  props: {
+    provinceList: Array,
+   selectedProvince: Number
+  },
+  computed: {
+     
+  },
+  methods: {
+    select() {
+      this.$emit('select:province', this.selected)
+      console.log(this.selectedProvince)
+    }
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>
