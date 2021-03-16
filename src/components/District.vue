@@ -1,7 +1,7 @@
 <template>
   <div class="District">
     <select class="form-select" aria-label="Default select example">
-      <option>Chose District</option>
+      <option value="0">Chose District</option>
       <template v-for="(district, index) in districtList" :key="index">
         <option
             v-show="selectedProvince === district.province_id"        

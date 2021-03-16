@@ -15,7 +15,6 @@
         {{ province.name }}
       </option>
     </select>
-    <span>{{ selectedProvince }}</span>
   </div>
 </template>
 
@@ -36,8 +35,7 @@ export default {
   },
   methods: {
     select() {
-      this.$emit('select:province', this.selected)
-      console.log(this.selectedProvince)
+      this.$emit('select:province', this.selected);
     }
   }
 };
