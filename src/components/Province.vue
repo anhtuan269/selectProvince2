@@ -30,13 +30,18 @@ export default {
     provinceList: Array,
    selectedProvince: Number
   },
+  watch: {
+    selected: function() {
+     this.$emit('select:province', this.selected);
+    }
+  },
   computed: {
      
   },
   methods: {
-    select() {
-      this.$emit('select:province', this.selected);
-    }
+    // select() {
+    //   this.$emit('select:province', this.selected);
+    // }
   }
 };
 </script>

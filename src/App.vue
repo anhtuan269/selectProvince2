@@ -1,14 +1,14 @@
 <template>
-  <Province 
-  :provinceList="provinces"
-  :selectedProvince="dataProvince"
-  @select:province="dataProvince = $event "
+  <Province
+    :provinceList="provinces"
+    :selectedProvince="dataProvince"
+    @select:province="dataProvince = $event"
   />
-  <District 
-  :districtList="districts"
-  :selectedProvince="dataProvince"
-   @select:province="dataProvince = $event "/>
-  
+  <District
+    :districtList="districts"
+    :selectedProvince="dataProvince"
+    @select:province="dataProvince = $event"
+  />
 </template>
 
 <script>
@@ -25,7 +25,8 @@ export default {
     return {
       provinces: [],
       districts: [],
-      dataProvince: 0      };
+      dataProvince: 0,
+    };
   },
   mounted() {
     this.fetchData();
@@ -53,7 +54,7 @@ export default {
             });
           }
         })
-        .catch(err => alert(err));
+        .catch((err) => alert(err));
     },
   },
 };
