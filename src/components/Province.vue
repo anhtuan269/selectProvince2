@@ -20,29 +20,27 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      selected: this.selectedProvince
+      selected: this.selectedProvince,
     };
   },
   name: "Province",
   props: {
     provinceList: Array,
-   selectedProvince: Number
+    selectedProvince: Number,
   },
   watch: {
-    selected: function() {
-     this.$emit('select:province', this.selected);
-    }
+    selected: function () {
+      this.$emit("select:province", this.selected);
+    },
   },
-  computed: {
-     
-  },
+  computed: {},
   methods: {
     // select() {
     //   this.$emit('select:province', this.selected);
     // }
-  }
+  },
 };
 </script>
 
